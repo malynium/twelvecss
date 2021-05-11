@@ -123,7 +123,7 @@ To style your checkboxes, you need to use our color classes - because we remove 
 
 .checkbox-{color}-{shade}
 
-For example, `checkbox-blue-700` would add a blue-700 background with white text, when checked.
+For example, `checkbox-blue-700` would add a blue-700 background with a white checkmark, when checked.
 
 > We add styling for various checkbox CSS states such as `:checked:hover`, `:hover:not(:checked)`, and `:checked:hover:focus`
 
