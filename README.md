@@ -26,8 +26,8 @@ Instead of Tailwind utility classes (we still love you Tailwind):
 ```
 # npm || yarn
 
-npm install twelvecss
-yarn add twelvecss
+npm install -D twelvecss
+yarn add -D twelvecss
 ```
 
 Then enable the plugin in your Tailwind config file:
