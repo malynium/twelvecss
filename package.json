@@ -1,0 +1,31 @@
+{
+  "name": "twelvecss",
+  "version": "0.0.0",
+  "description": "TwelveCSS provides convenience classes for TailwindCSS",
+  "license": "MIT",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public",
+    "allow-same-version": true
+  },
+  "scripts": {},
+  "peerDependencies": {
+    "tailwindcss": ">=2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malynium/twelvecss.git"
+  },
+  "author": "Jason Creviston",
+  "contributors": [
+    {
+      "name": "Jason Creviston",
+      "email": "jason@malynium.com",
+      "url": "https://github.com/jasoncrev"
+    }
+  ],
+  "dependencies": {
+    "hex-to-rgba": "2.0.1",
+    "mini-svg-data-uri": "1.2.3"
+  }
+}
