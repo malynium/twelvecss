@@ -81,9 +81,7 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.button-${e(key)}-${shade}`]: {
-                  '--tw-bg-opacity': '1',
                   'background-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
-                  '--tw-text-opacity': '1',
                   color: a11yColors[key][shade],
                 }
               }),
@@ -107,10 +105,8 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.checkbox-${e(key)}-${shade}:checked`]: {
-                  '--tw-bg-opacity': '1',
                   'background-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${a11yColors[key][shade]}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
-                  '--tw-border-opacity': '1',
                   'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                 }
               }),
@@ -134,7 +130,6 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.radio-${e(key)}-${shade}\:checked`]: {
-                  '--tw-border-opacity': 1,
                   'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   background: `radial-gradient(circle at 50%, ${hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`))} 50%, rgba(255, 255, 255, 1) 57%)`,
                 },
@@ -159,12 +154,10 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.switch-${e(key)}-${shade}:checked`]: {
-                  '--tw-bg-opacity': '1',
                   'background-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="${a11yColors[key][shade]}" /></svg>`)}")`,
                   'background-position': 'right',
                   'background-repeat': 'no-repeat',
-                  '--tw-border-opacity': '1',
                   'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                 }
               }),
