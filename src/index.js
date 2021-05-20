@@ -131,7 +131,9 @@ module.exports = plugin.withOptions(
                 ...a,
                 [`.radio-${e(key)}-${shade}\:checked`]: {
                   'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
-                  background: `radial-gradient(circle at 50%, ${hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`))} 50%, rgba(255, 255, 255, 1) 57%)`,
+                  'background-color':  hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'background-clip': 'content-box',
+                  padding: '0.25%',
                 },
               }),
               {}
