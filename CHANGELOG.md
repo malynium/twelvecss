@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- updates CHANGELOG.md
+
+## [0.1.2] - 2021-05-20
+
 ### Added
 
 - This changelog
@@ -14,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Unused Tailwind --tw-... vars for buttons, checkboxes, radios, and switches
+
+### Changed
+
+- The way radio buttons are created
 
 ## [0.1.1] - 2021-05-11
 
@@ -28,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Everything!
 
-[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/malynium/twelvecss/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/malynium/twelvecss/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/malynium/twelvecss/releases/tag/v0.1.0
