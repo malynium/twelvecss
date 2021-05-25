@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2021-05-25
+
+### Added
+
+- Support for custom theme colors in your Tailwind config file. Extending your theme with custom colors was breaking the app before this change
+
+- Support for custom colors for buttons and radios. Ex, radio-primary. However, for buttons, it will likely be easier to use Tailwind classes for your background and text. This is because we don't know what your custom colors are; so we can't set a proper a11y compatible text color like we would with button-blue-700. So something like button-primary will only set the background color. However, the twelvecss classes are there if you'd like to use them
+
 ### Changed
 
-- updates CHANGELOG.md
+- Updates CHANGELOG.md
 
 ## [0.1.2] - 2021-05-20
 

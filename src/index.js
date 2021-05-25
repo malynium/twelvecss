@@ -73,6 +73,16 @@ module.exports = plugin.withOptions(
       })
 
       const buttonColors = Object.keys(colors).reduce((acc, key) => {
+        if (typeof colors[key] === 'string') {
+          return {
+            ...acc,
+            [`.button-${e(key)}`]: {
+              '--tw-bg-opacity': '1',
+              'background-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+            },
+          };
+        }
+
         if (typeof colors[key] === 'object') {
           const colorShades = Object.keys(colors[key]);
           return {
@@ -97,6 +107,12 @@ module.exports = plugin.withOptions(
       })
 
       const checkboxColors = Object.keys(colors).reduce((acc, key) => {
+        if (typeof colors[key] === 'string') {
+          return {
+            ...acc
+          };
+        }
+
         if (typeof colors[key] === 'object') {
           const colorShades = Object.keys(colors[key]);
           return {
@@ -122,6 +138,19 @@ module.exports = plugin.withOptions(
       })
 
       const radioColors = Object.keys(colors).reduce((acc, key) => {
+        if (typeof colors[key] === 'string') {
+          return {
+            ...acc,
+            [`.radio-${e(key)}\:checked`]: {
+              '--tw-border-opacity': 1,
+              'border-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'background-color':  hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'background-clip': 'content-box',
+              padding: '0.25%',
+            },
+          };
+        }
+
         if (typeof colors[key] === 'object') {
           const colorShades = Object.keys(colors[key]);
           return {
@@ -148,6 +177,12 @@ module.exports = plugin.withOptions(
       })
 
       const switchColors = Object.keys(colors).reduce((acc, key) => {
+        if (typeof colors[key] === 'string') {
+          return {
+            ...acc,
+          };
+        }
+
         if (typeof colors[key] === 'object') {
           const colorShades = Object.keys(colors[key]);
           return {
