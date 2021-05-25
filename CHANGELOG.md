@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updates CHANGELOG.md version links
+- Updates README.md to document custom color configurations
 
 ## [0.2.0] - 2021-05-25
 

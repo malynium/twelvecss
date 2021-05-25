@@ -64,6 +64,28 @@ module.exports = {
 }
 ```
 
+#### Using Custom Colors
+
+Custom colors work for buttons and radios, whether you're extending the theme or have created your own custom theme colors.
+
+However, if you want to use all of Tailwind's colors plus your own custom colors, then be sure to configure Tailwind accordingly.
+
+```
+const colors = require('tailwindcss/colors');
+
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        ...colors,
+        primary: '#aaa',
+        secondary: '#bbb',
+      }
+    },
+  }
+}
+```
+
 > Remember, when you enable all colors, aliasing no longer happens unless you explicitly configure them in Tailwind.
 
 ### Buttons
