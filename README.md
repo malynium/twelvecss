@@ -110,9 +110,9 @@ Because of how we define buttons, checkboxes and switches, we don't know what co
 
 We have three button sizes - small, medium, and large.
 
-`.button-sm`
-`.button-md`
-`.button-lg`
+`button-sm`
+`button-md`
+`button-lg`
 
 In order to style the background and text color of your buttons, you have two options:
 
@@ -135,9 +135,9 @@ However, `button-blue-500` would have black text.
 
 We have three input size classes - small, medium, and large.
 
-`.input-sm`
-`.input-md`
-`.input-lg`
+`input-sm`
+`input-md`
+`input-lg`
 
 ### Form Select
 
@@ -155,9 +155,9 @@ It's actually styled similar to inputs, but you declare your size with HTML attr
 
 We have three checkbox size classes - small, medium, and large.
 
-`.checkbox-sm`
-`.checkbox-md`
-`.checkbox-lg`
+`checkbox-sm`
+`checkbox-md`
+`checkbox-lg`
 
 To style your checkboxes, you need to use our color classes - because we remove browser defaults. These provide an a11y compatible checkmark color.
 
@@ -171,9 +171,9 @@ For example, `checkbox-blue-700` would add a blue-700 background with a white ch
 
 We have three switch size classes - small, medium, and large.
 
-`.switch-sm`
-`.switch-md`
-`.switch-lg`
+`switch-sm`
+`switch-md`
+`switch-lg`
 
 To style your switches, you need to use our color classes. These provide an a11y compatible switch-circle color when "checked".
 
@@ -187,9 +187,9 @@ For example, `switch-blue-700` would add a blue-700 background with a white swit
 
 We have three radio size classes - small, medium, and large.
 
-`.radio-sm`
-`.radio-md`
-`.radio-lg`
+`radio-sm`
+`radio-md`
+`radio-lg`
 
 To style your radios, you need to use our color classes - because we remove browser defaults.
 
