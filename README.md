@@ -89,7 +89,7 @@ module.exports = {
 }
 ```
 
-Because of how we define buttons, checkboxes and switches, we don't know what color checkmark or switcher to use for a11y compatibility. Therefore, we set the color of these to `currentColor`. If this does not pass a11y compatibility, then you can set button text color, checkmark color and switcher color with the following classes.
+Because of how we define buttons, checkboxes and switches, we don't know what color text, checkmark or switcher to use for a11y compatibility. Therefore, we set the color of these to `currentColor`. If this does not pass a11y compatibility, then you can set button text color, checkmark color and switcher color with the following classes.
 
 #### Buttons
 
