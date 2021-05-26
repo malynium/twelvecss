@@ -64,11 +64,13 @@ module.exports = {
 }
 ```
 
-#### Using Custom Colors
+> Remember, when you enable all colors, aliasing no longer happens unless you explicitly configure them in Tailwind.
 
-Custom colors work for buttons and radios, whether you're extending the theme or have created your own custom theme colors.
+### Custom Colors
 
-However, if you want to use all of Tailwind's colors plus your own custom colors, then be sure to configure Tailwind accordingly.
+When you declare custom colors in your Tailwind config, those colors are available for buttons, radios, checkboxes and switches.
+
+For example, with the below config, a few of the new classes you could use are `radio-primary` and `button-lilac-500`. 
 
 ```
 const colors = require('tailwindcss/colors');
@@ -78,14 +80,31 @@ module.exports = {
     extend: {
       colors: {
         primary: '#aaa',
-        secondary: '#bbb',
+        lilac: {
+          500: '#C094C0',
+        },
       }
     },
   }
 }
 ```
 
-> Remember, when you enable all colors, aliasing no longer happens unless you explicitly configure them in Tailwind.
+Because of how we define buttons, checkboxes and switches, we don't know what color checkmark or switcher to use for a11y compatibility. Therefore, we set the color of these to `currentColor`. If this does not pass a11y compatibility, then you can set button text color, checkmark color and switcher color with the following classes.
+
+#### Buttons
+
+`button-text-black`
+`button-text-white`
+
+#### Checkboxes
+
+`checkmark-black`
+`checkmark-white`
+
+#### Switches
+
+`switcher-black`
+`switcher-white`
 
 ### Buttons
 
