@@ -4,9 +4,10 @@ const plugin = require('tailwindcss/plugin');
 const a11yColors = require('twelvecss/a11yColors');
 
 module.exports = plugin.withOptions(
-  ({ /* options */ } = {}) => {
+  (options = { typography: 'class' }) => {
     return ({ e, addBase, addUtilities, addComponents, theme }) => {
       const colors = theme('colors');
+      const typographyStrategy = options.typography;
       
       const baseRules = [
         {
@@ -50,6 +51,176 @@ module.exports = plugin.withOptions(
           .map((rule) => {
             return { [rule['target']]: rule.styles }
           })
+      )
+
+      const typographyRules = [
+        {
+          auto: [ 'h1' ],
+          class: [ '.h1' ],
+          styles: {
+            'font-weight': '700',
+            'font-size': '2.25rem',
+            'line-height': '2.5rem',
+            'margin-bottom': '1.25rem',
+            'margin-top': '2.5rem',
+            '@media (min-width: 640px)': {
+              'font-size': '3rem',
+              'line-height': '1',
+            },
+            '@media (min-width: 768px)': {
+              'font-size': '3.75rem',
+              'line-height': '1',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '4.5rem',
+              'line-height': '1',
+            }
+          }
+        },
+        {
+          auto: [ 'h2' ],
+          class: [ '.h2' ],
+          styles: {
+            'font-weight': '700',
+            'font-size': '1.875rem',
+            'line-height': '2.25rem',
+            'margin-bottom': '1.25rem',
+            'margin-top': '2.5rem',
+            '@media (min-width: 640px)': {
+              'font-size': '2.25rem',
+              'line-height': '2.5rem',
+            },
+            '@media (min-width: 768px)': {
+              'font-size': '3rem',
+              'line-height': '1',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '3.75rem',
+              'line-height': '1',
+            }
+          }
+        },
+        {
+          auto: [ 'h3' ],
+          class: [ '.h3' ],
+          styles: {
+            'font-weight': '700',
+            'font-size': '1.5rem',
+            'line-height': '2rem',
+            'margin-bottom': '1.25rem',
+            'margin-top': '2.5rem',
+            '@media (min-width: 640px)': {
+              'font-size': '1.875rem',
+              'line-height': '2.25rem',
+            },
+            '@media (min-width: 768px)': {
+              'font-size': '2.25rem',
+              'line-height': '2.5rem',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '3rem',
+              'line-height': '1',
+            }
+          }
+        },
+        {
+          auto: [ 'h4' ],
+          class: [ '.h4' ],
+          styles: {
+            'font-weight': '700',
+            'font-size': '1.25rem',
+            'line-height': '1.75rem',
+            'margin-bottom': '1.25rem',
+            'margin-top': '2.5rem',
+            '@media (min-width: 640px)': {
+              'font-size': '1.5rem',
+              'line-height': '2rem',
+            },
+            '@media (min-width: 768px)': {
+              'font-size': '1.875rem',
+              'line-height': '2.25rem',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '2.25rem',
+              'line-height': '2.5rem',
+            }
+          }
+        },
+        {
+          auto: [ 'h5' ],
+          class: [ '.h5' ],
+          styles: {
+            'font-weight': '700',
+            'font-size': '1.125rem',
+            'line-height': '1.75rem',
+            'margin-bottom': '1.25rem',
+            'margin-top': '2.5rem',
+            '@media (min-width: 640px)': {
+              'font-size': '1.25rem',
+              'line-height': '1.75rem',
+            },
+            '@media (min-width: 768px)': {
+              'font-size': '1.5rem',
+              'line-height': '2rem',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '1.875rem',
+              'line-height': '2.25rem',
+            }
+          }
+        },
+        {
+          auto: [ 'h6' ],
+          class: [ '.h6' ],
+          styles: {
+            'font-weight': '700',
+            'margin-bottom': '1.25rem',
+            'margin-top': '2.5rem',
+            '@media (min-width: 640px)': {
+              'font-size': '1.125rem',
+              'line-height': '1.75rem',
+            },
+            '@media (min-width: 768px)': {
+              'font-size': '1.25rem',
+              'line-height': '1.75rem',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '1.5rem',
+              'line-height': '2rem',
+            }
+          }
+        },
+        {
+          auto: [ 'p' ],
+          class: [ '.p' ],
+          styles: {
+            'margin-bottom': '1.25rem',
+            '@media (min-width: 640px)': {
+              'font-size': '1.125rem',
+              'line-height': '1.75rem',
+            },
+            '@media (min-width: 768px)': {
+              'font-size': '1.25rem',
+              'line-height': '1.75rem',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '1.5rem',
+              'line-height': '2rem',
+            }
+          }
+        }
+      ]
+
+      addBase(
+        typographyRules
+          .map((rule) => {
+            if (rule[typographyStrategy] === null) {
+              return null
+            }
+
+            return { [rule[typographyStrategy]]: rule.styles }
+          })
+          .filter(Boolean)
       )
 
       const buttonColors = Object.keys(colors).reduce((acc, key) => {
