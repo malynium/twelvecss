@@ -170,36 +170,13 @@ module.exports = plugin.withOptions(
           }
         },
         {
-          auto: [ 'h6' ],
-          class: [ '.h6' ],
-          styles: {
-            'font-weight': '700',
-            'margin-bottom': '1.25rem',
-            'margin-top': '2.5rem',
-            '@media (min-width: 640px)': {
-              'font-size': '1.125rem',
-              'line-height': '1.75rem',
-            },
-            '@media (min-width: 768px)': {
-              'font-size': '1.25rem',
-              'line-height': '1.75rem',
-            },
-            '@media (min-width: 1024px)': {
-              'font-size': '1.5rem',
-              'line-height': '2rem',
-            }
-          }
-        },
-        {
           auto: [ 'p' ],
           class: [ '.p' ],
           styles: {
+            'font-size': '1.125rem',
+            'line-height': '1.75rem',
             'margin-bottom': '1.25rem',
             '@media (min-width: 640px)': {
-              'font-size': '1.125rem',
-              'line-height': '1.75rem',
-            },
-            '@media (min-width: 768px)': {
               'font-size': '1.25rem',
               'line-height': '1.75rem',
             },
