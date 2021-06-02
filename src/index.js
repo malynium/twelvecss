@@ -285,7 +285,7 @@ module.exports = plugin.withOptions(
                   'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   'background-color':  hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   'background-clip': 'content-box',
-                  padding: '0.25%',
+                  padding: '2px',
                 },
               }),
               {}
