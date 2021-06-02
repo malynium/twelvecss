@@ -349,7 +349,9 @@ module.exports = plugin.withOptions(
           'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
         },
         '.radio-lg:hover:not(:checked),.radio-md:hover:not(:checked),.radio-sm:hover:not(:checked)': {
-          background: 'radial-gradient(circle at 50%, rgba(212, 212, 216, 1) 50%, rgba(255, 255, 255, 1) 57%)',
+          'background-color': 'rgba(212, 212, 216, 1)',
+          'background-clip': 'content-box',
+          padding: '2px',
         },
         '.switch-lg:hover:not(:checked),.switch-md:hover:not(:checked),.switch-sm:hover:not(:checked)': {
           '--tw-border-opacity': '1',
