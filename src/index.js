@@ -61,7 +61,6 @@ module.exports = plugin.withOptions(
             'font-weight': '700',
             'font-size': '2.25rem',
             'line-height': '2.5rem',
-            'margin-bottom': '1.25rem',
             'margin-top': '2.5rem',
             '@media (min-width: 640px)': {
               'font-size': '3rem',
@@ -84,7 +83,6 @@ module.exports = plugin.withOptions(
             'font-weight': '700',
             'font-size': '1.875rem',
             'line-height': '2.25rem',
-            'margin-bottom': '1.25rem',
             'margin-top': '2.5rem',
             '@media (min-width: 640px)': {
               'font-size': '2.25rem',
@@ -107,7 +105,6 @@ module.exports = plugin.withOptions(
             'font-weight': '700',
             'font-size': '1.5rem',
             'line-height': '2rem',
-            'margin-bottom': '1.25rem',
             'margin-top': '2.5rem',
             '@media (min-width: 640px)': {
               'font-size': '1.875rem',
@@ -130,7 +127,6 @@ module.exports = plugin.withOptions(
             'font-weight': '700',
             'font-size': '1.25rem',
             'line-height': '1.75rem',
-            'margin-bottom': '1.25rem',
             'margin-top': '2.5rem',
             '@media (min-width: 640px)': {
               'font-size': '1.5rem',
@@ -153,7 +149,6 @@ module.exports = plugin.withOptions(
             'font-weight': '700',
             'font-size': '1.125rem',
             'line-height': '1.75rem',
-            'margin-bottom': '1.25rem',
             'margin-top': '2.5rem',
             '@media (min-width: 640px)': {
               'font-size': '1.25rem',
