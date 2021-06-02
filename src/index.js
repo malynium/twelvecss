@@ -175,7 +175,7 @@ module.exports = plugin.withOptions(
           styles: {
             'font-size': '1.125rem',
             'line-height': '1.75rem',
-            'margin-bottom': '1.25rem',
+            'margin-top': '1.25rem',
             '@media (min-width: 640px)': {
               'font-size': '1.25rem',
               'line-height': '1.75rem',
@@ -274,7 +274,7 @@ module.exports = plugin.withOptions(
               'border-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
               'background-color':  hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
               'background-clip': 'content-box',
-              padding: '0.25%',
+              padding: '2px',
             },
           };
         }
