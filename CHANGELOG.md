@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Typography for headings and paragraphs
+
 ### Changed
 
-- Changes radio button padding from percent to pixel, for more consistency across device widths
-- Adds typography for headings and paragraphs
+- Radio button padding from percent to pixel, for more consistency across device widths
 
 ## [0.3.0] - 2021-05-26
 
