@@ -180,6 +180,23 @@ module.exports = plugin.withOptions(
               'line-height': '2rem',
             }
           }
+        },
+        {
+          auto: [ '.subheading' ],
+          class: [ '.subheading' ],
+          styles: {
+            'font-size': '1.25rem',
+            'line-height': '1.75rem',
+            'margin-top': '1.25rem',
+            '@media (min-width: 640px)': {
+              'font-size': '1.5rem',
+              'line-height': '2rem',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '1.875rem',
+              'line-height': '2.25rem',
+            }
+          }
         }
       ]
 
