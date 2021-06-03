@@ -232,7 +232,12 @@ module.exports = plugin.withOptions(
       const checkboxColors = Object.keys(colors).reduce((acc, key) => {
         if (typeof colors[key] === 'string') {
           return {
-            ...acc
+            ...acc,
+            [`.checkbox-${e(key)}:checked`]: {
+              'background-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${a11yColors[key] ? a11yColors[key] : 'currentColor'}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
+              'border-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+            }
           };
         }
 
@@ -303,6 +308,13 @@ module.exports = plugin.withOptions(
         if (typeof colors[key] === 'string') {
           return {
             ...acc,
+            [`.switch-${e(key)}:checked`]: {
+              'background-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="${a11yColors[key] ? a11yColors[key] : 'currentColor'}" /></svg>`)}")`,
+              'background-position': 'right',
+              'background-repeat': 'no-repeat',
+              'border-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+            }
           };
         }
 
