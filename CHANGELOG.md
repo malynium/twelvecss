@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Typography for headings and paragraphs
+- Typography for headings, paragraphs and blockquotes
 - 'subheading' typography class
 - string-based custom color support for checkboxes and radios
 
