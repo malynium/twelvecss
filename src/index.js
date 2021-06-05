@@ -72,6 +72,33 @@ module.exports = plugin.withOptions(
           }
         },
         {
+          auto: [ '.blockquote' ],
+          class: [ '.blockquote' ],
+          styles: {
+            'margin-top': '1.5rem',
+            'border-left-width': '8px',
+            'border-right-width': '4px',
+            padding: '0.75rem',
+            '--tw-shadow': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+            'box-shadow': 'var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)',
+            '@media (min-width: 768px)': {
+              'margin-top': '2rem',
+              padding: '1rem',
+            },
+            '@media (min-width: 1280px)': {
+              'margin-top': '2.5rem',
+              padding: '1.25rem',
+            }
+          }
+        },
+        {
+          auto: [ 'blockquote p' ],
+          class: [ 'blockquote p' ],
+          styles: {
+            'margin-top': '0px',
+          }
+        },
+        {
           auto: [ 'figure blockquote p' ],
           class: [ 'figure blockquote p' ],
           styles: {
