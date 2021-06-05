@@ -43,6 +43,19 @@ module.exports = plugin.withOptions(
             'background-position': `right 1rem top 50%`,
             'background-repeat': `no-repeat`,
           }
+        },
+        {
+          target: ['pre'],
+          styles: {
+            'padding-left': '1.25rem',
+            'padding-right': '1.25rem',
+          }
+        },
+        {
+          target: ['pre code'],
+          styles: {
+            'white-space': 'pre-wrap',
+          }
         }
       ]
 
