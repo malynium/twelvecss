@@ -55,6 +55,37 @@ module.exports = plugin.withOptions(
 
       const typographyRules = [
         {
+          auto: [ 'p' ],
+          class: [ '.p' ],
+          styles: {
+            'font-size': '1.125rem',
+            'line-height': '1.75rem',
+            'margin-top': '1.25rem',
+            '@media (min-width: 640px)': {
+              'font-size': '1.25rem',
+              'line-height': '1.75rem',
+            },
+            '@media (min-width: 1024px)': {
+              'font-size': '1.5rem',
+              'line-height': '2rem',
+            }
+          }
+        },
+        {
+          auto: [ 'figure blockquote p' ],
+          class: [ 'figure blockquote p' ],
+          styles: {
+            'margin-top': '0px',
+          }
+        },
+        {
+          auto: [ 'figure blockquote ~ figcaption' ],
+          class: [ 'figure blockquote ~ figcaption' ],
+          styles: {
+            'margin-top': '0.75rem',
+          }
+        },
+        {
           auto: [ 'h1' ],
           class: [ '.h1' ],
           styles: {
@@ -161,23 +192,6 @@ module.exports = plugin.withOptions(
             '@media (min-width: 1024px)': {
               'font-size': '1.875rem',
               'line-height': '2.25rem',
-            }
-          }
-        },
-        {
-          auto: [ 'p' ],
-          class: [ '.p' ],
-          styles: {
-            'font-size': '1.125rem',
-            'line-height': '1.75rem',
-            'margin-top': '1.25rem',
-            '@media (min-width: 640px)': {
-              'font-size': '1.25rem',
-              'line-height': '1.75rem',
-            },
-            '@media (min-width: 1024px)': {
-              'font-size': '1.5rem',
-              'line-height': '2rem',
             }
           }
         },
