@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Nothing to see here
+
+## [0.4.0] - 2021-06-08
+
 ### Added
 
 - Typography for headings, paragraphs and blockquotes
@@ -26,9 +30,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updates CHANGELOG.md version links
-- Updates README.md to document custom color configurations
-- Fixes crash when custom colors are defined as objects
+- CHANGELOG.md version links
+- README.md to document custom color configurations
+
+### Fixed
+
+- crash when custom colors are defined as objects
 
 ## [0.2.0] - 2021-05-25
 
@@ -48,13 +55,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - This changelog
 
-### Removed
-
-- Unused Tailwind --tw-... vars for buttons, checkboxes, radios, and switches
-
 ### Changed
 
 - The way radio buttons are created
+
+### Removed
+
+- Unused Tailwind --tw-... vars for buttons, checkboxes, radios, and switches
 
 ## [0.1.1] - 2021-05-11
 
@@ -69,7 +76,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Everything!
 
-[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/malynium/twelvecss/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/malynium/twelvecss/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/malynium/twelvecss/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/malynium/twelvecss/compare/v0.1.1...v0.1.2
