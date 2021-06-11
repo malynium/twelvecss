@@ -1,5 +1,5 @@
 const svgToDataUri = require('mini-svg-data-uri');
-const hexToRgba = require('hex-to-rgba');
+const hexRgbs = require('hex-rgbs');
 const plugin = require('tailwindcss/plugin');
 const a11yColors = require('twelvecss/a11yColors');
 
@@ -10,6 +10,12 @@ module.exports = plugin.withOptions(
       const typographyStrategy = options.typography;
       
       const baseRules = [
+        {
+          target: [':root'],
+          styles: {
+            '--tw-bg-opacity': '1',
+          }
+        },
         {
           target: [':checked:hover', ':checked:hover:focus'],
           styles: {
@@ -271,8 +277,7 @@ module.exports = plugin.withOptions(
           return {
             ...acc,
             [`.button-${e(key)}`]: {
-              '--tw-bg-opacity': '1',
-              'background-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'background-color': hexRgbs(theme(`colors.${key}`, `colors.${key}`), 'var(--tw-bg-opacity)'),
             },
           };
         }
@@ -285,7 +290,7 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.button-${e(key)}-${shade}`]: {
-                  'background-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'background-color': hexRgbs(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`), 'var(--tw-bg-opacity)'),
                   color: a11yColors[key] ? a11yColors[key][shade] : 'currentColor',
                 }
               }),
@@ -295,9 +300,8 @@ module.exports = plugin.withOptions(
         }
       }, {});
 
-      addUtilities(buttonColors, {
-        respectPrefix: false,
-        respectImportant: false
+      addComponents(buttonColors, {
+        respectPrefix: false
       })
 
       const checkboxColors = Object.keys(colors).reduce((acc, key) => {
@@ -305,9 +309,9 @@ module.exports = plugin.withOptions(
           return {
             ...acc,
             [`.checkbox-${e(key)}:checked`]: {
-              'background-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'background-color': hexRgbs(theme(`colors.${key}`, `colors.${key}`)),
               'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${a11yColors[key] ? a11yColors[key] : 'currentColor'}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
-              'border-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'border-color': hexRgbs(theme(`colors.${key}`, `colors.${key}`)),
             }
           };
         }
@@ -320,9 +324,9 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.checkbox-${e(key)}-${shade}:checked`]: {
-                  'background-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'background-color': hexRgbs(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${a11yColors[key] ? a11yColors[key][shade] : 'currentColor'}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
-                  'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'border-color': hexRgbs(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                 }
               }),
               {}
@@ -331,9 +335,8 @@ module.exports = plugin.withOptions(
         }
       }, {});
 
-      addUtilities(checkboxColors, {
-        respectPrefix: false,
-        respectImportant: false
+      addComponents(checkboxColors, {
+        respectPrefix: false
       })
 
       const radioColors = Object.keys(colors).reduce((acc, key) => {
@@ -341,9 +344,8 @@ module.exports = plugin.withOptions(
           return {
             ...acc,
             [`.radio-${e(key)}\:checked`]: {
-              '--tw-border-opacity': 1,
-              'border-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
-              'background-color':  hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'border-color': hexRgbs(theme(`colors.${key}`, `colors.${key}`)),
+              'background-color':  hexRgbs(theme(`colors.${key}`, `colors.${key}`)),
               'background-clip': 'content-box',
               padding: '2px',
             },
@@ -358,8 +360,8 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.radio-${e(key)}-${shade}\:checked`]: {
-                  'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
-                  'background-color':  hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'border-color': hexRgbs(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'background-color':  hexRgbs(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   'background-clip': 'content-box',
                   padding: '2px',
                 },
@@ -370,9 +372,8 @@ module.exports = plugin.withOptions(
         }
       }, {});
 
-      addUtilities(radioColors, {
-        respectPrefix: false,
-        respectImportant: false
+      addComponents(radioColors, {
+        respectPrefix: false
       })
 
       const switchColors = Object.keys(colors).reduce((acc, key) => {
@@ -380,11 +381,11 @@ module.exports = plugin.withOptions(
           return {
             ...acc,
             [`.switch-${e(key)}:checked`]: {
-              'background-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'background-color': hexRgbs(theme(`colors.${key}`, `colors.${key}`)),
               'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="${a11yColors[key] ? a11yColors[key] : 'currentColor'}" /></svg>`)}")`,
               'background-position': 'right',
               'background-repeat': 'no-repeat',
-              'border-color': hexToRgba(theme(`colors.${key}`, `colors.${key}`)),
+              'border-color': hexRgbs(theme(`colors.${key}`, `colors.${key}`)),
             }
           };
         }
@@ -397,11 +398,11 @@ module.exports = plugin.withOptions(
               (a, shade) => ({
                 ...a,
                 [`.switch-${e(key)}-${shade}:checked`]: {
-                  'background-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'background-color': hexRgbs(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                   'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="${a11yColors[key] ? a11yColors[key][shade] : 'currentColor'}" /></svg>`)}")`,
                   'background-position': 'right',
                   'background-repeat': 'no-repeat',
-                  'border-color': hexToRgba(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
+                  'border-color': hexRgbs(theme(`colors.${key}.${shade}`, `colors.${key}.${shade}`)),
                 }
               }),
               {}
@@ -410,49 +411,8 @@ module.exports = plugin.withOptions(
         }
       }, {});
 
-      addUtilities(switchColors, {
-        respectPrefix: false,
-        respectImportant: false
-      })
-
-      const utilitiesRules = {
-        '.button-text-black': {
-          color: 'black',
-        },
-        '.button-text-white': {
-          color: 'white',
-        },
-        '.checkbox-lg:hover:not(:checked),.checkbox-md:hover:not(:checked),.checkbox-sm:hover:not(:checked)': {
-          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${theme('colors.gray.400', colors.gray[400])}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
-        },
-        '.checkmark-black:checked': {
-          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
-        },
-        '.checkmark-white:checked': {
-          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
-        },
-        '.radio-lg:hover:not(:checked),.radio-md:hover:not(:checked),.radio-sm:hover:not(:checked)': {
-          'background-color': 'rgba(212, 212, 216, 1)',
-          'background-clip': 'content-box',
-          padding: '2px',
-        },
-        '.switch-lg:hover:not(:checked),.switch-md:hover:not(:checked),.switch-sm:hover:not(:checked)': {
-          '--tw-border-opacity': '1',
-          'border-color': 'rgba(212, 212, 216, var(--tw-border-opacity))',
-          '--tw-bg-opacity': '1',
-          'background-color': 'rgba(212, 212, 216, var(--tw-bg-opacity))',
-        },
-        '.switcher-black:checked': {
-          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="black" /></svg>`)}")`,
-        },
-        '.switcher-white:checked': {
-          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="white" /></svg>`)}")`,
-        },
-      }
-
-      addUtilities(utilitiesRules, {
-        respectPrefix: false,
-        respectImportant: false
+      addComponents(switchColors, {
+        respectPrefix: false
       })
 
       const componentsRules = {
@@ -479,6 +439,12 @@ module.exports = plugin.withOptions(
           'padding-right': '0.875rem',
           'font-size': '0.875rem',
           'line-height': '1.25rem',
+        },
+        '.button-text-black': {
+          color: 'black',
+        },
+        '.button-text-white': {
+          color: 'white',
         },
         '.checkbox-lg': {
           height: '1.25rem',
@@ -509,6 +475,15 @@ module.exports = plugin.withOptions(
           'border-width': '2px',
           '--tw-border-opacity': '1',
           'border-color': 'rgba(161, 161, 170, var(--tw-border-opacity))',
+        },
+        '.checkbox-lg:hover:not(:checked),.checkbox-md:hover:not(:checked),.checkbox-sm:hover:not(:checked)': {
+          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${theme('colors.gray.400', colors.gray[400])}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
+        },
+        '.checkmark-black:checked': {
+          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
+        },
+        '.checkmark-white:checked': {
+          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
         },
         '.input-lg': {
           'border-width': '1px',
@@ -570,6 +545,11 @@ module.exports = plugin.withOptions(
           '--tw-border-opacity': '1',
           'border-color': 'rgba(161, 161, 170, var(--tw-border-opacity))',
         },
+        '.radio-lg:hover:not(:checked),.radio-md:hover:not(:checked),.radio-sm:hover:not(:checked)': {
+          'background-color': 'rgba(212, 212, 216, 1)',
+          'background-clip': 'content-box',
+          padding: '2px',
+        },
         '.switch-lg': {
           height: '1.5rem',
           width: '3.5rem',
@@ -623,6 +603,18 @@ module.exports = plugin.withOptions(
           transition: 'background-image 200ms ease-in-out, background-color 200ms ease-in-out, background-position 200ms ease-in-out, border-color 200ms ease-in-out',
           'background-image': `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3ccircle cx='50' cy='50' r='40' fill='rgba(161%2c 161%2c 170%2c 1)'/%3e%3c/svg%3e")`,
           'background-repeat': 'no-repeat',
+        },
+        '.switch-lg:hover:not(:checked),.switch-md:hover:not(:checked),.switch-sm:hover:not(:checked)': {
+          '--tw-border-opacity': '1',
+          'border-color': 'rgba(212, 212, 216, var(--tw-border-opacity))',
+          '--tw-bg-opacity': '1',
+          'background-color': 'rgba(212, 212, 216, var(--tw-bg-opacity))',
+        },
+        '.switcher-black:checked': {
+          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="black" /></svg>`)}")`,
+        },
+        '.switcher-white:checked': {
+          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="white" /></svg>`)}")`,
         },
         '.textarea': {
           'border-width': '1px',

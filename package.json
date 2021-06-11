@@ -33,7 +33,7 @@
     }
   ],
   "dependencies": {
-    "hex-to-rgba": "2.0.1",
+    "hex-rgbs": "0.1.0",
     "mini-svg-data-uri": "1.2.3"
   }
 }

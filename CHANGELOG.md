@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing to see here
 
+## [0.4.1] - 2021-06-11
+
+### Changed
+
+- uses hex-rgbs package instead of hex-to-rgba
+
+### Fixed
+
+- `bg-opacity-{value}` Tailwind classes having no effect with `button-{color}[{shade}]` Twelvecss classes
+
 ## [0.4.0] - 2021-06-08
 
 ### Added
@@ -76,7 +86,8 @@ Nothing to see here
 
 Everything!
 
-[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/malynium/twelvecss/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/malynium/twelvecss/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/malynium/twelvecss/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/malynium/twelvecss/compare/v0.1.2...v0.2.0
