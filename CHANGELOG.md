@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing to see here
 
+## [0.4.2] - 2021-06-15
+
+### Fixed
+
+- non-functioning version of hex-rgbs
+
 ## [0.4.1] - 2021-06-11
 
 ### Changed
