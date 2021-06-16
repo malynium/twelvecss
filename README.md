@@ -1,12 +1,12 @@
 # TwelveCSS
 
-Easily style your HTML elements with convenience classes, based on TailwindCSS.
+Easily style your HTML elements with convenience classes, built on TailwindCSS.
 
 ## Why should I use this?
 
-- element class lists are easier to read
+- your class lists are easier to read
 - save time, by typing less classes
-- conserve mental energy - we provide various sizing standards, and options for a11y compatible text colors on buttons, switches and checkboxes
+- conserve mental energy - because we provide various sizing standards, and options for a11y compatible text colors on buttons, switches and checkboxes
 - cross-browser consistency - we ensure features like 'focus' look the same
 
 For example, with TwelveCSS, you can do this:
