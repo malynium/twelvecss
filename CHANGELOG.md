@@ -102,7 +102,9 @@ Nothing to see here
 
 Everything!
 
-[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.4.3...HEAD
+[0.4.3]: https://github.com/malynium/twelvecss/compare/v0.4.2...v0.4.3
+[0.4.2]: https://github.com/malynium/twelvecss/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/malynium/twelvecss/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/malynium/twelvecss/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/malynium/twelvecss/compare/v0.2.0...v0.3.0
