@@ -1,6 +1,6 @@
 {
   "name": "twelvecss",
-  "version": "0.4.2",
+  "version": "0.4.3-canary.0",
   "description": "TwelveCSS provides convenience classes for TailwindCSS",
   "keywords": [
     "twelvecss",
