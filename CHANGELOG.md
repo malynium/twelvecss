@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Nothing to see here
+
+## [0.4.3] - 2021-06-16
+
 ### Changed
 
 - only applies hover states for checkboxes, radios, switches at lg screens and up
+
+### Fixed
+
+- makes hex-rgbs a dependency, instead of devDependency
 
 ## [0.4.2] - 2021-06-15
 
