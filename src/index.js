@@ -17,18 +17,6 @@ module.exports = plugin.withOptions(
           }
         },
         {
-          target: [':checked:hover', ':checked:hover:focus'],
-          styles: {
-            '--tw-ring-opacity': '1',
-            '--tw-ring-color': theme('colors.gray.200', colors.gray[200]),
-            '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
-            '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(8px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
-            '-webkit-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
-            '-moz-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
-            'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)`,
-          }
-        },
-        {
           target: ['button:focus', 'input:focus', 'select:focus', 'textarea:focus'],
           styles: {
             '&:focus': {
@@ -61,6 +49,20 @@ module.exports = plugin.withOptions(
           target: ['pre code'],
           styles: {
             'white-space': 'pre-wrap',
+          }
+        },
+        {
+          target: ['@media (min-width: 1024px)'],
+          styles: {
+            ':checked:hover, :checked:hover:focus': {
+              '--tw-ring-opacity': '1',
+              '--tw-ring-color': theme('colors.gray.200', colors.gray[200]),
+              '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
+              '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(8px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
+              '-webkit-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
+              '-moz-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
+              'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)`,
+            }
           }
         }
       ]
@@ -476,9 +478,6 @@ module.exports = plugin.withOptions(
           '--tw-border-opacity': '1',
           'border-color': 'rgba(161, 161, 170, var(--tw-border-opacity))',
         },
-        '.checkbox-lg:hover:not(:checked),.checkbox-md:hover:not(:checked),.checkbox-sm:hover:not(:checked)': {
-          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${theme('colors.gray.400', colors.gray[400])}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
-        },
         '.checkmark-black:checked': {
           'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
         },
@@ -545,11 +544,6 @@ module.exports = plugin.withOptions(
           '--tw-border-opacity': '1',
           'border-color': 'rgba(161, 161, 170, var(--tw-border-opacity))',
         },
-        '.radio-lg:hover:not(:checked),.radio-md:hover:not(:checked),.radio-sm:hover:not(:checked)': {
-          'background-color': 'rgba(212, 212, 216, 1)',
-          'background-clip': 'content-box',
-          padding: '2px',
-        },
         '.switch-lg': {
           height: '1.5rem',
           width: '3.5rem',
@@ -604,12 +598,6 @@ module.exports = plugin.withOptions(
           'background-image': `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3ccircle cx='50' cy='50' r='40' fill='rgba(161%2c 161%2c 170%2c 1)'/%3e%3c/svg%3e")`,
           'background-repeat': 'no-repeat',
         },
-        '.switch-lg:hover:not(:checked),.switch-md:hover:not(:checked),.switch-sm:hover:not(:checked)': {
-          '--tw-border-opacity': '1',
-          'border-color': 'rgba(212, 212, 216, var(--tw-border-opacity))',
-          '--tw-bg-opacity': '1',
-          'background-color': 'rgba(212, 212, 216, var(--tw-bg-opacity))',
-        },
         '.switcher-black:checked': {
           'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="black" /></svg>`)}")`,
         },
@@ -624,6 +612,22 @@ module.exports = plugin.withOptions(
           'padding-right': '1rem',
           'padding-top': '0.25rem',
           'padding-bottom': '0.25rem',
+        },
+        '@media (min-width: 1024px)': {
+          '.checkbox-lg:hover:not(:checked),.checkbox-md:hover:not(:checked),.checkbox-sm:hover:not(:checked)': {
+            'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="${theme('colors.gray.400', colors.gray[400])}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg>`)}")`,
+          },
+          '.radio-lg:hover:not(:checked),.radio-md:hover:not(:checked),.radio-sm:hover:not(:checked)': {
+            'background-color': 'rgba(212, 212, 216, 1)',
+            'background-clip': 'content-box',
+            padding: '2px',
+          },
+          '.switch-lg:hover:not(:checked),.switch-md:hover:not(:checked),.switch-sm:hover:not(:checked)': {
+            '--tw-border-opacity': '1',
+            'border-color': 'rgba(212, 212, 216, var(--tw-border-opacity))',
+            '--tw-bg-opacity': '1',
+            'background-color': 'rgba(212, 212, 216, var(--tw-bg-opacity))',
+          },
         },
       }
 
