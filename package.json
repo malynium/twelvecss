@@ -33,9 +33,7 @@
     }
   ],
   "dependencies": {
+    "hex-rgbs": "0.1.1",
     "mini-svg-data-uri": "1.2.3"
-  },
-  "devDependencies": {
-    "hex-rgbs": "0.1.1"
   }
 }
