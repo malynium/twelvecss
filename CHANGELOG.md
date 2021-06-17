@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing to see here
 
+## [0.4.4] - 2021-06-17
+
+### Fixed
+
+- broken hover states for checkboxes, radios, switches at lg screens and up
+
 ## [0.4.3] - 2021-06-16
 
 ### Changed
@@ -102,7 +108,8 @@ Nothing to see here
 
 Everything!
 
-[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.4.3...HEAD
+[Unreleased]: https://github.com/malynium/twelvecss/compare/v0.4.4...HEAD
+[0.4.4]: https://github.com/malynium/twelvecss/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/malynium/twelvecss/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/malynium/twelvecss/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/malynium/twelvecss/compare/v0.4.0...v0.4.1
