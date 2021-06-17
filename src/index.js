@@ -9,70 +9,45 @@ module.exports = plugin.withOptions(
       const colors = theme('colors');
       const typographyStrategy = options.typography;
       
-      const baseRules = [
-        {
-          target: [':root'],
-          styles: {
-            '--tw-bg-opacity': '1',
-          }
+      const baseRules = {
+        ':root': {
+          '--tw-bg-opacity': '1',
         },
-        {
-          target: ['button:focus', 'input:focus', 'select:focus', 'textarea:focus'],
-          styles: {
-            '&:focus': {
-              outline: 'none',
-              '--tw-ring-offset-shadow': 'var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)',
-              '--tw-ring-shadow': 'var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)',
-              '-webkit-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
-              '-moz-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
-              'box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
-            }
-          }
+        'select': {
+          appearance: 'none',
+          'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="${theme('colors.gray.400', colors.gray[400])}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>`)}")`,
+          'background-position': `right 1rem top 50%`,
+          'background-repeat': `no-repeat`,
         },
-        {
-          target: ['select'],
-          styles: {
-            appearance: 'none',
-            'background-image': `url("${svgToDataUri(`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="${theme('colors.gray.400', colors.gray[400])}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>`)}")`,
-            'background-position': `right 1rem top 50%`,
-            'background-repeat': `no-repeat`,
-          }
+        'pre': {
+          'padding-left': '1.25rem',
+          'padding-right': '1.25rem',
         },
-        {
-          target: ['pre'],
-          styles: {
-            'padding-left': '1.25rem',
-            'padding-right': '1.25rem',
-          }
+        'pre code': {
+          'white-space': 'pre-wrap'
         },
-        {
-          target: ['pre code'],
-          styles: {
-            'white-space': 'pre-wrap',
-          }
+        'button:focus, input:focus, select:focus, textarea:focus': {
+          outline: 'none',
+          '--tw-ring-offset-shadow': 'var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)',
+          '--tw-ring-shadow': 'var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)',
+          '-webkit-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
+          '-moz-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
+          'box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
         },
-        {
-          target: ['@media (min-width: 1024px)'],
-          styles: {
-            ':checked:hover, :checked:hover:focus': {
-              '--tw-ring-opacity': '1',
-              '--tw-ring-color': theme('colors.gray.200', colors.gray[200]),
-              '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
-              '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(8px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
-              '-webkit-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
-              '-moz-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
-              'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)`,
-            }
+        '@media (min-width: 1024px)': {
+          ':checked:hover, :checked:hover:focus': {
+            '--tw-ring-opacity': '1',
+            '--tw-ring-color': theme('colors.gray.200', colors.gray[200]),
+            '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
+            '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(8px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
+            '-webkit-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
+            '-moz-box-shadow': 'var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)',
+            'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)`,
           }
         }
-      ]
+      }
 
-      addBase(
-        baseRules
-          .map((rule) => {
-            return { [rule['target']]: rule.styles }
-          })
-      )
+      addBase(baseRules)
 
       const typographyRules = [
         {
