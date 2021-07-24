@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing to see here
 
+## [0.5.0] - 2021-07-24
+
+### Added
+
+- sky color to a11yColors.js
+- deprecates lightBlue color in a11yColors.js, per Tailwind
+
 ## [0.4.4] - 2021-06-17
 
 ### Fixed
