@@ -15,6 +15,12 @@ Nothing to see here
 
 - TailwindCSS version requirements
 
+## [1.0.1] - 2022-01-18
+
+### Changed
+
+- Little of nothing
+
 ## [1.0.0] - 2022-01-18
 
 ### Added
